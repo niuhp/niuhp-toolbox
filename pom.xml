@@ -13,6 +13,7 @@
         <poi-ooxml.version>3.10-FINAL</poi-ooxml.version>
         <zxing.core.version>3.2.0</zxing.core.version>
         <libthrift.version>0.9.3</libthrift.version>
+        <aliyun.oss.version>2.2.1</aliyun.oss.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,11 @@
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
             <version>${libthrift.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${aliyun.oss.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
