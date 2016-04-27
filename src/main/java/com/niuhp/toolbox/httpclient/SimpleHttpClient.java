@@ -174,7 +174,7 @@ public class SimpleHttpClient {
                 try {
                     Thread.sleep(autoCloseTimeout);
                 } catch (InterruptedException e) {
-                    LogX.getLogX(getClass()).error("sleep error", e);
+                    logx.error("sleep error", e);
                 }
                 if (request instanceof HttpRequestBase) {
                     HttpRequestBase httpRequestBase = (HttpRequestBase) request;
