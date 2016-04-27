@@ -3,7 +3,8 @@
  */
 package com.niuhp.toolbox.httpclient;
 
-import com.niuhp.core.logadapter.LogX;
+import com.niuhp.core.log.api.LogX;
+import com.niuhp.core.logadapter.LogXManager;
 import org.apache.http.HttpResponse;
 
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
  * Created by niuhp on 2016/4/13.
  */
 public class NeedLoginHttpClient extends SimpleHttpClient {
-    private static final LogX logx = LogX.getLogX(NeedLoginHttpClient.class);
+    private static final LogX logx = LogXManager.getLogX(NeedLoginHttpClient.class);
 
     private volatile boolean login = false;
     private String loginUrl;

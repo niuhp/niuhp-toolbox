@@ -3,7 +3,8 @@
  */
 package com.niuhp.toolbox.httpclient;
 
-import com.niuhp.core.logadapter.LogX;
+import com.niuhp.core.log.api.LogX;
+import com.niuhp.core.logadapter.LogXManager;
 import com.niuhp.core.util.IoUtil;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
@@ -45,7 +46,7 @@ import java.util.concurrent.Executors;
  * Created by niuhp on 2016/4/13.
  */
 public class SimpleHttpClient {
-    private static final LogX logx = LogX.getLogX(SimpleHttpClient.class);
+    private static final LogX logx = LogXManager.getLogX(SimpleHttpClient.class);
 
     private HttpClient httpClient;
     private Object lockObj = new Object();

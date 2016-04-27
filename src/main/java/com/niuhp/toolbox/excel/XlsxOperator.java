@@ -3,7 +3,8 @@
  */
 package com.niuhp.toolbox.excel;
 
-import com.niuhp.core.logadapter.LogX;
+import com.niuhp.core.log.api.LogX;
+import com.niuhp.core.logadapter.LogXManager;
 import com.niuhp.core.util.IoUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -17,7 +18,7 @@ import java.util.*;
  * Created by niuhp on 2016/4/13.
  */
 public class XlsxOperator {
-    private static final LogX logx = LogX.getLogX(XlsxOperator.class);
+    private static final LogX logx = LogXManager.getLogX(XlsxOperator.class);
 
     public List<CellInfo> readExcel(String excelPath) {
 

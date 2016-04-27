@@ -4,7 +4,8 @@ import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
 import com.niuhp.core.cache.CommonCache;
-import com.niuhp.core.logadapter.LogX;
+import com.niuhp.core.log.api.LogX;
+import com.niuhp.core.logadapter.LogXManager;
 import com.niuhp.core.util.IoUtil;
 
 import java.io.File;
@@ -16,7 +17,7 @@ import java.util.Calendar;
  * Created by niuhp on 2016/4/20.
  */
 public class OssClientProxy {
-    private static LogX logx = LogX.getLogX(OssClientProxy.class);
+    private static LogX logx = LogXManager.getLogX(OssClientProxy.class);
 
     private OssClientProxy() {
     }

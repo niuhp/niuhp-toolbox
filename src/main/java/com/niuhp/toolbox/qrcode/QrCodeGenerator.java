@@ -8,7 +8,8 @@ import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import com.niuhp.core.logadapter.LogX;
+import com.niuhp.core.log.api.LogX;
+import com.niuhp.core.logadapter.LogXManager;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -22,7 +23,7 @@ import java.util.Map;
  * Created by niuhp on 2016/4/13.
  */
 public class QrCodeGenerator {
-    private static final LogX logx = LogX.getLogX(QrCodeGenerator.class);
+    private static final LogX logx = LogXManager.getLogX(QrCodeGenerator.class);
 
     private static final Color defaultBackgroundColor = new Color(192, 192, 192);
     private static final Color defaultForegroundColor = new Color(0, 128, 0);
