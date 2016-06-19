@@ -13,7 +13,7 @@ public class WeixinUser {
   private String language;
   private String province;
   private String city;
-  private String counttry;
+  private String country;
   private String headimgurl;
   private long subscribe_time;
   private String privilege;
@@ -78,12 +78,12 @@ public class WeixinUser {
     this.city = city;
   }
 
-  public String getCounttry() {
-    return counttry;
+  public String getCountry() {
+    return country;
   }
 
-  public void setCounttry(String counttry) {
-    this.counttry = counttry;
+  public void setCountry(String country) {
+    this.country = country;
   }
 
   public String getHeadimgurl() {
