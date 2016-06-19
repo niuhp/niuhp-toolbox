@@ -1,7 +1,6 @@
 package com.niuhp.toolbox.aliyun.oss;
 
 import com.aliyun.oss.OSSClient;
-import com.niuhp.core.cache.CommonCache;
 import com.niuhp.core.cache.KvExecutor;
 
 /**
@@ -9,9 +8,9 @@ import com.niuhp.core.cache.KvExecutor;
  */
 public class OssClientGenerator implements KvExecutor<OssClientKey, OSSClient> {
 
-    @Override
-    public OSSClient excute(OssClientKey ossClientKey) {
-        OSSClient occClient = new OSSClient(ossClientKey.getEndPoint(), ossClientKey.getAccessId(), ossClientKey.getAccessKey());
-        return occClient;
-    }
+  @Override
+  public OSSClient excute(OssClientKey ossClientKey) {
+    OSSClient occClient = new OSSClient(ossClientKey.getEndPoint(), ossClientKey.getAccessId(), ossClientKey.getAccessKey());
+    return occClient;
+  }
 }
