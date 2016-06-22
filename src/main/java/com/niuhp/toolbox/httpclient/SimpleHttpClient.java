@@ -84,6 +84,7 @@ public class SimpleHttpClient {
       builder.setCookieSpec(CookieSpecs.STANDARD_STRICT);
       builder.setConnectionRequestTimeout(connectionRequestTimeout);
       builder.setConnectTimeout(connectTimeout);
+
       if (https) {
         builder.setExpectContinueEnabled(true);
         Collection<String> targetPreferredAuthSchemes = Arrays.asList(AuthSchemes.NTLM, AuthSchemes.DIGEST);
@@ -95,6 +96,7 @@ public class SimpleHttpClient {
 
       HttpClientBuilder httpClientBuilder = HttpClients.custom();
       httpClientBuilder.setDefaultRequestConfig(config);
+
       if (https) {
         RegistryBuilder<ConnectionSocketFactory> registryBuilder = RegistryBuilder.create();
         registryBuilder.register("http", PlainConnectionSocketFactory.INSTANCE);
@@ -249,8 +251,8 @@ public class SimpleHttpClient {
     String content = null;
 
     try {
-      Charset charset = ContentType.getOrDefault(httpEntity).getCharset();
-      content = EntityUtils.toString(httpEntity, charset);
+      Charset defaultCharset = Charset.forName("utf-8");
+      content = EntityUtils.toString(httpEntity, defaultCharset);
     } catch (IOException e) {
       logger.error("getContent error", e);
     } finally {
