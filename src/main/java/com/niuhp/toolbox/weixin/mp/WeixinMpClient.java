@@ -37,6 +37,7 @@ public class WeixinMpClient {
   }
 
   public TokenResult getAccessToken(String code) {
+    logger.info("file.encoding is "+System.getProperty("file.encoding")+",code="+code);
     SimpleHttpClient httpClient = new SimpleHttpClient();
     String url = "https://api.weixin.qq.com/sns/oauth2/access_token";
     Map<String, String> paraMap = new HashMap<String, String>();
@@ -126,12 +127,13 @@ public class WeixinMpClient {
     } catch (Exception e) {
       Class<ErrorResult> clazz = ErrorResult.class;
       ErrorResult errorResult = gson.fromJson(jsonStr, clazz);
-      logger.error(String.format("parse TokenResult error,errorResult=%s", errorResult), e);
+      logger.error(String.format("parse TokenResult error,errorResult=%s,jsonStr=%s", errorResult,jsonStr), e);
     }
     return null;
   }
 
   private static WeixinUser parseWeixinUserFrom(String jsonStr) {
+    logger.info(String.format("parse %s to WeixinUser",jsonStr));
     Gson gson = new Gson();
     try {
       Class<WeixinUser> clazz = WeixinUser.class;
@@ -139,7 +141,7 @@ public class WeixinMpClient {
     } catch (Exception e) {
       Class<ErrorResult> clazz = ErrorResult.class;
       ErrorResult errorResult = gson.fromJson(jsonStr, clazz);
-      logger.error(String.format("parse WeixinUser error,errorResult=%s", errorResult), e);
+      logger.error(String.format("parse WeixinUser error,errorResult=%s,jonsStr=%s", errorResult,jsonStr), e);
     }
     return null;
   }
